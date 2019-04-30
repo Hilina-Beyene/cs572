@@ -1,0 +1,22 @@
+{
+  "name": "cs572",
+  "version": "1.0.0",
+  "description": "assignments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hilina-Beyene/cs572.git"
+  },
+  "author": "Hlina Beyene",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hilina-Beyene/cs572/issues"
+  },
+  "homepage": "https://github.com/Hilina-Beyene/cs572#readme",
+  "dependencies": {
+    "rxjs": "^6.5.1"
+  }
+}
