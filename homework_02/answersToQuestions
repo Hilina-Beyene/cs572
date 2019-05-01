@@ -1,0 +1,44 @@
+Q1) What will be the order of execution between setImmediate(callback) and setTimeout(callback,0) ?
+
+Answer:
+
+When setTimeout is set to be 0, they have they same kind of priority but which get executed first will be determine by
+other factors.
+
+setImmediate: will wait for until all I/O handlers which are in the queue gets executed and then setImmediate will be 
+executed.
+
+setTimeout: will wait for until all the event functions which are in the queue gets executed and then setTimeout will be 
+executed.
+
+Q2)Explain the difference between process.nextTick and setImmediate? what will be the execution order ?
+
+Answer:
+
+process.nextTick Vs setImmediate: process.nextTick is going to be queued in the "next tick queue" which is not in 
+the order of event loop instead it is checks after current operation and it always gets executed after the current 
+operation ends. setImmediate on the other hand it is queued in the check phase of the event loop and gets executed when 
+the check phase is reached.
+
+Order of execution:
+process.nextTick: A function passed to process.nextTick() is going to be executed on the current iteration of the 
+event loop, after the current operation ends.
+
+setImmediate: the queue containing the callbacks of this, will be executed once in every iteration 
+when event loop is in Check phase.
+
+Q3) Name 10 core modules that node provides by default
+
+Answer:
+1, http
+2, url
+3, queryString
+4, path
+5, fs 
+6, util
+7, events
+8, constants
+9, process
+10, assert
+
+
