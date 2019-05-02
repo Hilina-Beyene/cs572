@@ -1,0 +1,49 @@
+Using read file method:
+
+test: 0.788ms
+test: 4.466ms
+test: 1.813ms
+test: 4.053ms
+test: 1.468ms
+test: 8.687ms
+test: 0.840ms
+test: 3.355ms
+test: 3.001ms
+
+Using read file method:
+test: 39.051ms
+test: 20.326ms
+test: 24.734ms
+test: 17.055ms
+test: 33.410ms
+test: 18.886ms
+test: 19.302ms
+test: 18.118ms
+test: 27.085ms
+
+Using stream method:
+
+test: 0.693ms
+test: 0.813ms
+test: 2.531ms
+test: 0.721ms
+test: 3.784ms
+test: 5.542ms
+test: 2.531ms
+test: 4.613ms
+test: 1.866ms
+
+I made 9 requests at the same time for each and found the above results. Below is the RELATIVE worst and 
+best execution time of the three methods:
+
+usingReadFile:
+  best execution time: 0.788ms
+  worst execution time: 8.687ms
+
+usingReadFileSync:
+  best execution time: 17.055ms
+  worst execution time: 39.051ms
+
+usingStream:
+  best execution time: 0.693ms
+  worst execution time: 5.542ms
