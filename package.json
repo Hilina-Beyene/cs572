@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Hilina-Beyene/cs572#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
     "rxjs": "^6.5.1"
   }
 }
