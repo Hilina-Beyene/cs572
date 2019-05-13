@@ -1,0 +1,150 @@
+1, db.restaurants.find({}).toArray((err, doc) =>{
+        console.log(doc);
+    });
+
+2, db.restaurants.find({})
+        .project({restaurant_id: 1, name: 1, district: 1, cuisine: 1})
+        .toArray((err, doc) => {
+            console.log(doc);
+    });
+
+3, db.restaurants.find({})
+        .project({_id: 0, restaurant_id: 1, name: 1, district: 1, cuisine: 1})
+        .toArray((err, doc) => {
+            console.log(doc);
+        });
+
+4, db.restaurants.find({})
+            .project({_id: 0, restaurant_id: 1, name: 1, district: 1, zipcode:1})
+            .toArray((err, doc) =>1 {
+                console.log(doc);
+            });
+
+5, db.restaurants.find({district: {$eq: 'Bronx'}})
+                .toArray((err, doc) => {
+                    console.log(doc);
+                });
+
+6, db.restaurants.find({district: {$eq: 'Bronx'}})
+                 .limit(5)
+                 .toArray((err, doc) => {
+                    console.log(doc);
+                 });
+
+7, db.restaurants.find({district: {$eq: 'Bronx'}})
+                 .skip(5)
+                 .limit(5)
+                 .toArray((err, doc) => {
+                     console.log(doc);
+                 });
+
+8, db.restaurants.find({'address.coord': {$lt: '-95.754168'}})
+                 .toArray((err, doc) => {
+                     console.log(doc);
+                 });
+
+9, db.restaurants.find({cuisine: {$ne: 'American'}, 
+                        "grade.score": {$gt: 70},
+                        'address.coord': {$lt: -65.754168}})
+                 .toArray((err, doc) => {
+                     console.log(doc);
+                 });
+
+10, db.restaurants.find({name: {$regex: /^Wil/}})
+                  .project({restaurant_id: 1, name: 1, district: 1, cuisine: 1})
+                  .toArray((err, doc) => {
+                      console.log(doc);
+                  });
+
+11, db.restaurants.find({name: {$regex: "ces$"}})
+                  .project({restaurant_id: 1, name: 1, district: 1, cuisine: 1})
+                  .toArray((err, doc) => {
+                      console.log(doc);
+                  });
+
+12, db.restaurants.find({name: {$regex: /Reg/}})
+                  .project({restaurant_id: 1, name: 1, district: 1, cuisine: 1})
+                  .toArray((err , doc) => {
+                      console.log(doc);
+                  });
+
+13, db.restaurants.find({district: {$eq: 'Bronx'}, 
+                         cuisine: {$or: ['American', 'Chinese']}})
+                  .toArray((err, doc) => {
+                      console.log(doc);
+                  });
+
+14, db.restaurants.find({district: {$or: 
+                         ['Staten Island', 'Qeens', 'Bronx', 'Brooklyn']}})
+                  .toArray((err, doc) => {
+                      console.log(doc);
+                  });
+
+15, db.restaurants.find({district: {$ne: {$or: ['Staten Island', 'Qeens', 'Bronx', 'Brooklyn']}}})
+                  .project({restaurant_id: 1, name: 1, district: 1, cuisine: 1})
+                  .toArray((err, doc) => {
+                      console.log(doc);
+                  });
+
+16, db.restaurants.find({'grade.score': {$lt: 11}})
+                  .project({restaurant_id: 1, name: 1, district: 1, cuisine: 1})
+                  .toArray((err, doc) => {
+                      console.log(doc);
+                  });
+
+17, db.restaurants.find({'address.coord[1]': {$lt: 52}, 'address.coord[1]': {$gt: 42}})
+                  .project({restaurant_id: 1, name: 1, address: 1, 'address.coord': 1})
+                  .toArray((err, doc) => {
+                      console.log(doc);
+                  });
+
+18, db.restaurants.find({})
+                  .sort({name: 1})
+                  .toArray((err, doc) => {
+                      console.log(doc);
+                  });
+
+19, db.restaurants.find({})
+                  .sort({name: -1})
+                  .toArray((err, doc) => {
+                      console.log(doc);
+                  });
+20, db.restaurants.find({})
+                  .sort({cuisine: 1})
+                  .sort({district: -1})
+                  .toArray((err, doc) => {
+                      console.log(doc);
+                  });
+
+21, db.restaurants.find({'address.coord': {$type: double}})
+                  .toArray((err, doc) => {
+                      console.log(doc);
+                  });
+
+22, db.restaurants.find({name: {$regex: /^Mad/}})
+                  .project({name: 1, district: 1, 'address.coord': 1, cuisine: 1})
+                  .toArray((err, doc) => {
+                      console.log(doc);
+                  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

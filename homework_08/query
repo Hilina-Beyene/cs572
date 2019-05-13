@@ -1,0 +1,45 @@
+
+1, db.restaurants.find({});
+
+2, db.restaurants.find({}).project({restaurant_id: 1, name: 1, 
+district: 1, cuisine: 1});
+
+3, db.restaurants.find({}).project( {_id: 0,restaurant_id: 1, name: 1, 
+district: 1, cuisine: 1});
+
+4, db.restaurants.find({}).project({_id: 0,restaurant_id: 1, name: 1, 
+district: 1, zipcode: 1});
+
+5, db.restaurants.find({district: {$eq: 'Bronx'}});
+
+6, db.restaurants.find({district: {$eq: 'Bronx'}}).limit(5);
+
+7, db.restaurants.find({district: {$eq: 'Bronx'}})
+                        .skip(5);
+                        .limit(5);
+8, db.restaurants.find({coord: {$in: {$lt: [-95.754168]}}});
+
+9, db.restaurants.find({cuisine: {$ne: 'American'},
+ grade: {$gt: 70}, coord: {$lt: -65.754168}});
+
+10, db.restaurants.find({name: {$regex: ".*Wil.*"}})
+        .project({restaurant_id: 1, name: 1, district: 1, cuisine: 1});
+
+11, db.restaurants.find({name: {$regex: ".*ces.*"}})
+        .project({restaurant_id: 1, name: 1, district: 1, cuisine: 1});
+
+12, db.restaurants.find({name: {$regex: ".*Reg.*"}})
+        .project({restaurant_id: 1, name: 1, district: 1, cuisine: 1});
+
+13, db.restaurants.find({district: {$eq: 'Bronx'}, cuisine: {$in ['American' , 'Chinese']}})
+
+14, db.restaurants.find({district: {$in: ['Staten Island', 'Queens', 'Bronx', 'Broklyn']}})
+        .project({restaurant_id:1 , name: 1, district: 1, cuisine:1});
+
+15, db.restaurants.find({district: {$ne: {$in: ['Staten Island', 'Queens', 'Bronx', 'Broklyn']}}})
+        .project({restaurant_id:1 , name: 1, district: 1, cuisine:1});
+
+16, db.restaurants.find({score:{$lt: 11}})
+        .project({restaurant_id:1 , name: 1, district: 1, cuisine:1});
+
+17,  
