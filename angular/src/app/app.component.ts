@@ -5,7 +5,7 @@ import { IsVisibleDirective } from './Homework_13/isVisible.directive';
   selector: 'app-root',
   //templateUrl: './app.component.html',
   template: `
-    <div>
+   <!-- <div>
       <h1>Homework_12</h1>
       <counter1 [counter]="counterValueOne" (counterChange)="onChangeOne($event)"></counter1>
       <p>
@@ -35,7 +35,11 @@ import { IsVisibleDirective } from './Homework_13/isVisible.directive';
         <span>{{pipeString | multi: 5}}</span>
       </div>
     </div>
-    
+    <div>
+        <h1>Homework_14</h1>
+        <user></user>
+    </div>-->
+    <router-outlet></router-outlet>
   `,
   //directives: [IsVisibleDirective],
   styleUrls: ['./app.component.css']
